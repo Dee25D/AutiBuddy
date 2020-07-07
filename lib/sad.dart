@@ -13,7 +13,7 @@ class Sad extends StatelessWidget{
       ),
       body: Center(
 
-        child: Container(child: Image(image: AssetImage('assets/Crying-girl.jpg')),
+        child: Container(child: Image(image: AssetImage('assets/crying.jpg')),
         ),
 
       ),

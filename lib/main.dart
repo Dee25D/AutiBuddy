@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'griddashboard.dart';
+import 'package:autibuddyapp/griddashboard.dart';
 
 
 void main() => runApp(MyApp());
@@ -53,22 +53,22 @@ class _MyHomePageState extends State<MyHomePage>{
             color: Colors.black
         ),),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        //color: Colors.white70,
+      body: SingleChildScrollView(
+          child: Container(
+              height: MediaQuery.of(context).size.height,
+               width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius:
+                BorderRadius.only(bottomLeft: Radius.circular(255.0)),
+              image: DecorationImage(
+              image: AssetImage("assets/ori.jpg"),fit: BoxFit.fill),
+              ),
 
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/AUTI BUDDY 3-02.png"),fit: BoxFit.fill),
-        ),
 
-
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
+            child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                     Text(
               'Good Morning Buddy',
               semanticsLabel: greeting(),
               style: TextStyle(
@@ -78,35 +78,34 @@ class _MyHomePageState extends State<MyHomePage>{
             ),
 
 
-            SizedBox(
-              height: 60,
-            ),
+                   SizedBox(
+                     height: 60,
+                   ),
 
+                      Padding(
+                        padding: EdgeInsets.only(left: 16, right: 16),
 
-            Padding(
-              padding: EdgeInsets.only(left: 16, right: 16),
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        "Welcome!",
-                        style: GoogleFonts.cairo(
+                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                               Text(
+                              "Welcome!",
+                             style: GoogleFonts.cairo(
                             textStyle: TextStyle(
                                 color: Colors.black54,
                                 fontSize: 26,
                                 fontWeight: FontWeight.bold)),
                       ),
-                      SizedBox(
-                        height: 4,
+                                 SizedBox(
+                                   height: 4,
                       ),
-                      Text(
-                        "Home",
-                        style: GoogleFonts.openSans(
-                            textStyle: TextStyle(
+                                  Text(
+                                    "Home",
+                                 style: GoogleFonts.openSans(
+                                 textStyle: TextStyle(
                                 color: Color(0xffa29aac),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600)),
@@ -116,46 +115,42 @@ class _MyHomePageState extends State<MyHomePage>{
                 ],
               ),
             ),
-            SizedBox(
-              height: 40,
+                 SizedBox(
+                  height: 40,
             ),
 
-            GridDashboard()
+                    GridDashboard()
 
           ],
         ),
       ),
 
-
-      bottomNavigationBar: CurvedNavigationBar(
-
-        index : 1,
-        color: Colors.purple,
-        backgroundColor: Colors.white,
-        buttonBackgroundColor: Colors.purpleAccent,
-        height: 50,
-        animationDuration: Duration (
-            milliseconds: 200
-        ),
-        animationCurve: Curves.bounceInOut,
-        onTap: (index){
-          setState(() {
-            mypages = index;
-          });
-        },
-
-        items:<Widget>[
-          Icon(Icons.notifications_none,size: 20, color: Colors.black,),
-          Icon(Icons.home,size: 20, color: Colors.black),
-          Icon(Icons.account_circle,size: 20, color: Colors.black,),
-        ],
-
       ),
+           bottomNavigationBar: CurvedNavigationBar(
 
+             index : 1,
+             color: Colors.purple,
+             backgroundColor: Colors.white,
+             buttonBackgroundColor: Colors.purpleAccent,
+             height: 50,
+             animationDuration: Duration (
+             milliseconds: 200
+              ),
+              animationCurve: Curves.bounceInOut,
+              onTap: (index){
+              setState(() {
+               mypages = index;
+              });
+             },
 
+               items:<Widget>[
+                  Icon(Icons.notifications_none,size: 20, color: Colors.black,),
+                  Icon(Icons.home,size: 20, color: Colors.black),
 
+                ],
+
+           ),
     );
-
 
   }
 }

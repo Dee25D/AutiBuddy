@@ -12,7 +12,7 @@ class GridDashboard extends StatelessWidget {
       title: "About",
       subtitle: "Auti Buddy",
       event: "",
-      img: "assets/AUTI BUDDY 3-02.png",
+      img: "assets/buddy.png",
       navigateTo : About(),
     );
 
@@ -20,7 +20,7 @@ class GridDashboard extends StatelessWidget {
     title: "Learning",
     subtitle: "Different emotions",
     event: "6 Items",
-    img: "",
+    img: "assets/auti.PNG",
     navigateTo: Learning(),
   );
 
@@ -28,7 +28,7 @@ class GridDashboard extends StatelessWidget {
     title: "Emotions quiz",
     subtitle: "Lets score it",
     event: "",
-    img: "",
+    img: "assets/buddy.png",
     navigateTo: Quiz(),
   );
 
@@ -36,7 +36,7 @@ class GridDashboard extends StatelessWidget {
     title: "Watch",
     subtitle: "from youtube",
     event: "",
-    img: "",
+    img: "assets/buddy.png",
     navigateTo: VideoEmo(),
   );
 
@@ -44,7 +44,7 @@ class GridDashboard extends StatelessWidget {
     title: "To do",
     subtitle: "Homework",
     event: "Items",
-    img: "",
+    img: "assets/auti.PNG",
     navigateTo: ToDo(),
   );
 

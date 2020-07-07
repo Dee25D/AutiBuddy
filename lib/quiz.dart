@@ -1,64 +1,47 @@
+import 'package:autibuddyapp/playquiz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:autibuddyapp/Notification.dart';
-import 'package:autibuddyapp/profile.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'main.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class Quiz extends StatelessWidget{
 
-  final pages = [Notify(),  MyHomePage() ,Profile(),] ;
-  var mypages = 1;
+
+class Quiz extends StatefulWidget {
 
   @override
+  _QuizState createState() => _QuizState();
+}
+
+class _QuizState extends State<Quiz> {
+  @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text("Emotions Quiz"),
-      ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        padding: EdgeInsets.symmetric(horizontal: 30),
         width: MediaQuery.of(context).size.width,
-        color: Colors.deepPurpleAccent,
-
-        child: Text('Lets play some quiz!',
-            style: GoogleFonts.cairo(
-            textStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            GestureDetector(
+              onTap: (){
+                Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: (context) => PlayQuiz()
+                ));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 54),
+                decoration: BoxDecoration(
+                  color: Colors.purpleAccent,
+                  borderRadius: BorderRadius.circular(24)
+                ),
+                child: Text("Start Quiz Now", style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18
+                ),),
+              ),
+            ),
+          ],
         ),
-
-      ),
-
-      bottomNavigationBar: CurvedNavigationBar(
-
-        index : 1,
-        color: Colors.purple,
-        backgroundColor: Colors.white,
-        buttonBackgroundColor: Colors.purpleAccent,
-        height: 50,
-        animationDuration: Duration (
-            milliseconds: 200
-        ),
-        animationCurve: Curves.bounceInOut,
-        onTap: (index){
-          setState(() {
-            mypages = index;
-          });
-        },
-
-        items:<Widget>[
-          Icon(Icons.notifications_none,size: 20, color: Colors.black,),
-          Icon(Icons.home,size: 20, color: Colors.black),
-          Icon(Icons.account_circle,size: 20, color: Colors.black,),
-        ],
-
       ),
     );
   }
-  void setState(Null Function() param0) {}
 }

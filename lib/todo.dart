@@ -5,6 +5,7 @@ import 'package:autibuddyapp/Notification.dart';
 import 'package:autibuddyapp/profile.dart';
 import 'main.dart';
 
+// ignore: must_be_immutable
 class ToDo extends StatelessWidget {
 
   final pages = [Notify(),  MyHomePage() ,Profile(),] ;
@@ -24,7 +25,7 @@ class ToDo extends StatelessWidget {
 
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/AUTI BUDDY 3-02.png"),fit: BoxFit.fill),
+              image: AssetImage("assets/buddy.png"),fit: BoxFit.fill),
         ),
 
         child: Text('Text'),

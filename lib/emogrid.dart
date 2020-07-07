@@ -10,7 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 class EmoGrid extends StatelessWidget {
   final Items item1 = new Items(
     title: "SAD",
-    img: "assets/Crying-girl.jpg",
+    img: "assets/crying.jpg",
     navigateTo : Sad(),
   );
 

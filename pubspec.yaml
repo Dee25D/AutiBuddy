@@ -60,9 +60,11 @@ flutter:
     - assets/happy.png
     - assets/shocked.png
     - assets/angry.jpg
-    - assets/Crying-girl.jpg
+    - assets/crying.jpg
     - assets/confused.png
-    - assets/AUTI BUDDY 3-02.png
+    - assets/buddy.png
+    - assets/ori.jpg
+    - assets/un.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
